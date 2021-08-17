@@ -1,0 +1,154 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box;
+}
+h1{
+    font-weight: 800;
+    font-size:x-large;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* 先給匡線 */
+div{
+    border: 1px solid black;
+}
+/* 開始 */
+.container{
+    width: 100%;
+    background-color: rgb(6, 1, 53);
+}
+.nav1{
+    margin: auto;
+    width: 80%;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+}
+.nav2{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    background-color: rgb(6, 1, 53); 
+    
+    color: #fff;
+}
+.nav2 ul{
+    display: flex;
+    padding: 10px 0;
+}
+.nav2 ul li{
+    margin-right: 15px;
+}
+.container_1{
+    padding: 3px;
+    display: flex;
+    margin: auto;
+    width: 100%;
+    box-shadow: 0 0 5px 0 black;
+}
+.nav3{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+.nav3 .right{
+    display: flex;
+}
+.right div{
+    display: flex;
+    margin-left: 10px;
+    padding-left: 3px;
+    border-left: 1px solid black;
+    align-items: center; 
+}
+.container_2{
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+.box_left{
+    width: 15%;
+}
+.box_left>div{
+    padding: 15px;
+}
+.hot .contant{
+    padding: 5px;
+}
+.box_middle{
+    width: 60%;
+    padding: 5px;
+}
+.box_right{
+    width: 25%;
+    padding: 5px;
+}
+.main_top{
+    border-radius: 3px;
+    background-image: url("http://fakeimg.pl/700x100");
+    margin: 0 5px 20px;
+}
+.main_top ul{
+    display: flex;
+    background-color: rgba(255,255,255,.5);
+    padding:10px 5px 20px;
+}
+.main_top h1{
+    margin: 5px 5px 20px;
+}
+.main_top .data{
+    display: flex;
+    background-color: rgba(7,36,67,.5);
+}
+.main_top .data a{
+    margin: 10px 20px 10px 5px;
+}
+
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./all.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="nav1">
+            <img src="https://www.pinnacle.com/static/media/logo-on-dark.94bbcdf8.svg" alt="">
+            <div class="right">
+                <form action="">
+                    <input type="text" placeholder="電子郵件或帳號">
+                    <input type="text" placeholder="密碼">
+                    <button class="log">登入</button>
+                    <button class="regist">註冊</button>
+                </form>
+                    <p>忘記<a href="#">電子郵件</a>或<a href="#">密碼</a>？</p>  
+            </div>
+        </nav>
+        <nav class="nav2">
+            <ul>
+                <li>體育博彩</li>
+                <li>賽中盤中心</li>
+                <li>娛樂場</li>
+                <li>賽況娛樂場</li>
+                <li>虛擬運動</li>
+                <li>電子競技</li>
+                <li>投注資源</li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container_1">
+        <nav class="nav3">
+            <form action="">
+                <input type="text" placeholder="搜尋">
+            </form>
+            <div class="right">
+                <div class="styli_option">
+                    <a href="#">單一賠率</a>
+                    <a href="#">多重投注賠率</a>
+                </div>
+                <div class="style_dropdown">
+                    <p>歐洲賠率</p>
+                </div>
+                <div class="style_dropdown">
+                    <p>ZH TW</p>
+                </div>
+                <div class="time">
+                    <!-- 時間 -->
+                </div>
+                <div class="style_option">
+                    <p>說明</p>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container_2">
+        <div class="box_left">
+            <div class="hot">
+                <h3>熱門</h3>
+                <div class="contant">
+                    <p>
+                        <a href="#">登入</a>或<a href="#">註冊</a>變更您的最愛
+                    </p>
+                </div>
+            </div>
+            <hr>
+            <div class="hot_sports">
+                <h3>最受歡迎運動種類</h3>
+                <ul>
+                    <li>足球</li>
+                    <li>電子競技</li>
+                    <li>網球</li>
+                    <li>棒球</li>
+                    <li>籃球</li>
+                    <li>美式足球</li>
+                </ul>
+            </div>
+        </div>
+        <div class="box_middle">
+            <div class="main_top">
+                <ul>
+                    <li>主頁</li>
+                    <span>/</span>
+                    <li>足球</li>
+                </ul>
+                <h1>足球 賠率</h1>
+                <div class="data">
+                    <a href="#">精華</a>
+                    <a href="#">賽盤中</a>
+                    <a href="#">比賽</a>
+                    <a href="#">聯盟</a>
+                </div>
+            </div>
+        </div>
+        <div class="box_right">
+            <div class="top_tittle">
+                <p>注單</p>
+            </div>
+            <div class="bar">
+                <button>單注</button>
+                <button>多重投注</button>
+                <button>優惠過關盤</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let Today = new Date();
+        let h =Today.getHours();
+        let m = Today.getMinutes();
+        let s = Today.getSeconds();
+        document.querySelector('.time').textContent=`${h}:${m}:${s}`
+    </script>
+</body>
+</html>
