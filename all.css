@@ -52,9 +52,9 @@ table {
 	border-spacing: 0;
 }
 /* 先給匡線 */
-div{
+/* div{
     border: 1px solid black;
-}
+} */
 /* 開始 */
 .container{
     width: 100%;
@@ -73,12 +73,12 @@ div{
     width: 80%;
     display: flex;
     background-color: rgb(6, 1, 53); 
-    
     color: #fff;
 }
 .nav2 ul{
     display: flex;
     padding: 10px 0;
+    
 }
 .nav2 ul li{
     margin-right: 15px;
@@ -100,6 +100,7 @@ div{
 .nav3 .right{
     display: flex;
 }
+
 .right div{
     display: flex;
     margin-left: 10px;
@@ -119,21 +120,50 @@ div{
 .box_left>div{
     padding: 15px;
 }
-.hot .contant{
+.hot .content{
+    margin-top: 10px;
+    padding: 10px;
+    box-shadow: 1px 1px 2px black
+}
+label{
+    display: block;
+    width: 100%;
+    box-shadow: 1px 1px 2px black;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+}
+label:hover{
+    background-color: gray;
+}
+.content_sport{
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    background-color: #fff;
+}
+input[type=radio]{
+    display: none;
+}
+input[type=radio]:checked + .content_sport{
+    height: 150px;
+    padding-left: 20px;
+}
+.content_sport li{
     padding: 5px;
 }
 .box_middle{
     width: 60%;
-    padding: 5px;
+    padding: 15px;
 }
 .box_right{
     width: 25%;
-    padding: 5px;
+    padding: 15px;
 }
 .main_top{
     border-radius: 3px;
     background-image: url("http://fakeimg.pl/700x100");
-    margin: 0 5px 20px;
+    
 }
 .main_top ul{
     display: flex;
@@ -150,5 +180,183 @@ div{
 .main_top .data a{
     margin: 10px 20px 10px 5px;
 }
+.main_contentTittle{
+    background-color: rgb(6, 1, 53);
+    border-radius: 3px 3px 0 0;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    height: 35px;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+    border-bottom: 5px solid rgb(52, 121, 248);
+}
+.main_contentHead{
+    width: 100%;
+    display: flex;
+    padding: 5px 15px;
+    font-size: 13px;
+    color: rgb(78, 77, 77);
+    background-color: rgb(228, 228, 228);
+    justify-content: space-between;
+    align-items: center;
+}
+.games{
+    display: flex;
+    padding: 5px 15px;
+    font-size: 13px;
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+.games .score button,.handicap button{
+    color:rgb(0, 110, 255);
+    width: 60px;
+    height: 50px;
+    margin:  0 2px;
+    padding: 10px 0;
+    border-radius: 4px;
+    border: 1px solid rgb(177, 177, 177);
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFF 70%, #F8F8F8 80%, #E6E6E6 100%);
+    cursor: pointer;
+    
+}
+.handicap button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.handicap button span:first-child{
+    color: black;
+}
+.metaData{
+    width: 40%;
+}
+.metaData p {
+    margin: 5px 0;
+}
+.score{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.score div{
+    width: 33.3%;
+    text-align: center;
+}
+.handicap{
+    width: 20%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.empty{
+    width: 10%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
 
+.box_right .top_tittle{
+    padding: 10px;
+    color: #fff;
+    background-color: rgb(6, 1, 53);
+}
 
+.box_right .tab{
+    flex: 1 1;
+    display: flex;
+    width: 100%;
+}
+.tab button{
+    background-color: #fff;
+    height: 35px;
+    width: 33.33%;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2;
+    box-shadow: 0 ;
+    border: 0;
+    cursor: pointer;
+    
+}
+.tab button:first-child{
+    box-shadow: 0 3px 0 0  orangered ;
+    z-index: 20;
+}
+h3{
+    margin-bottom: 20px ;
+    color: rgb(22, 22, 71);
+    font-weight: 800;
+}
+.tabBottom{
+    width: 100%;
+    height: 400px;
+    font-size: 12px;
+    padding: 20px 10px;
+    background-color: rgb(194, 194, 194);
+    overflow: scroll;
+    overflow-x: hidden;
+    /* position: relative; */
+}
+.blue_bottom{
+    /* position: absolute; */
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(6, 1, 53);
+    color: #fff;
+    font-size: 12px;
+    padding: 10px;
+    /* justify-content: center; */
+}
+.blue_bottom div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10pt;
+}
+.blue_bottom input{
+    width: 100%;
+    height: 40px;
+    background-color: orangered;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+}
+.detail_box{
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+}
+.detail_box p{
+    padding-bottom: 10px;
+}
+.data_test{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.data_test div:last-child{
+    background-color: orangered;
+    color: #fff;
+    padding: 5px;
+}
+.input_box{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.input_box input{
+    width: 45%;
+    height: 30px;
+}
