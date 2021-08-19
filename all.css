@@ -63,10 +63,40 @@ table {
 .nav1{
     margin: auto;
     width: 80%;
-    padding: 5px 0;
+    padding: 10px 0;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #fff;
+}
+.nav1 .right{
+    color: #fff;
+    font-size: 10pt;
+}
+.nav1 .right a{
+    color: #fff;
+    text-decoration: none;
+}
+.nav1 .right input{
+    border-radius: 3px;
+    height: 25px;
+    border: none;
+    padding-left: 10px;
+    margin-bottom: 5px;
+}
+.nav1 .log{
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: transparent;
+}
+.nav1 .regist{
+    background-color: orangered;
+    color: #fff;
+    border: none;
+}
+.nav1 .right button{
+    height: 28px;
+    width: 50px;
+    
 }
 .nav2{
     margin: auto;
@@ -97,6 +127,15 @@ table {
     justify-content: space-between;
     padding: 5px 0;
 }
+.nav3 input{
+    background-color: rgb(207, 206, 206);
+    border: none;
+    height: 25px;
+    padding: 0 10px;
+}
+.nav3 ::-webkit-input-placeholder{
+    color: black;
+}
 .nav3 .right{
     display: flex;
 }
@@ -107,6 +146,10 @@ table {
     padding-left: 3px;
     border-left: 1px solid black;
     align-items: center; 
+}
+.right a{
+    color:black;
+    text-decoration: none;
 }
 .container_2{
     display: flex;
@@ -178,7 +221,9 @@ input[type=radio]:checked + .content_sport{
     background-color: rgba(7,36,67,.5);
 }
 .main_top .data a{
-    margin: 10px 20px 10px 5px;
+    margin: 10px 20px 10px 15px;
+    color: #fff;
+    text-decoration: none;
 }
 .main_contentTittle{
     background-color: rgb(6, 1, 53);
@@ -273,6 +318,10 @@ input[type=radio]:checked + .content_sport{
     display: flex;
     width: 100%;
 }
+.box_right div img{
+    margin-top: 10px;
+    width: 100%;
+}
 .tab button{
     background-color: #fff;
     height: 35px;
@@ -359,4 +408,22 @@ h3{
 .input_box input{
     width: 45%;
     height: 30px;
+}
+.footer{
+    width: 100%;
+    margin-top: 500px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    height: 300px;
+    /* background-color:   palegoldenrod; */
+}
+
+.footer div a{
+    margin-bottom: 10px;
+    display: block;
+    text-decoration: none;
+    color: gray;
+    font-size: 11px;
 }
