@@ -58,7 +58,7 @@ table {
 /* 開始 */
 .container{
     width: 100%;
-    background-color: rgb(6, 1, 53);
+    background:linear-gradient(90deg, rgb(11,21,35) 0%, rgb(11,44,84) 100%);
 }
 .nav1{
     margin: auto;
@@ -84,11 +84,13 @@ table {
     margin-bottom: 5px;
 }
 .nav1 .log{
+    border-radius: 2px;
     border: 1px solid #fff;
     color: #fff;
     background-color: transparent;
 }
 .nav1 .regist{
+    border-radius: 2px;
     background-color: orangered;
     color: #fff;
     border: none;
@@ -102,7 +104,7 @@ table {
     margin: auto;
     width: 80%;
     display: flex;
-    background-color: rgb(6, 1, 53); 
+    /* background-color: rgb(6, 1, 53);  */
     color: #fff;
 }
 .nav2 ul{
@@ -168,16 +170,22 @@ table {
     padding: 10px;
     box-shadow: 1px 1px 2px black
 }
+.hot .content a{
+    font-weight: 600;
+    text-decoration: none;
+    color: darkblue;
+}
 label{
     display: block;
     width: 100%;
-    box-shadow: 1px 1px 2px black;
     border-radius: 3px;
     padding: 10px;
     cursor: pointer;
+    margin-bottom: 2px;
 }
 label:hover{
     background-color: gray;
+    box-shadow: 1px 1px 2px black;
 }
 .content_sport{
     height: 0;
@@ -427,3 +435,6 @@ h3{
     color: gray;
     font-size: 11px;
 }
+.labelShadow{
+    box-shadow:1px 1px 2px black
+  }

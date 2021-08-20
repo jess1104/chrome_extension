@@ -1,3 +1,4 @@
+// 足球假資料
 let socerData = [
   {
     tittleF: "年輕人",
@@ -30,6 +31,7 @@ let socerData = [
     event: "冠軍聯賽",
   },
 ];
+// 電競假資料
 let gamesData = [
   {
     tittleF: "英勇",
@@ -50,10 +52,16 @@ let gamesData = [
     num: +55,
   },
 ];
+// 網球假資料
 let tennisData = [
   {
     tittleF: "Cabal J-S / Farah R",
-    tittleS:"Krajinovic F / Martin F"
+    tittleS: "Krajinovic F / Martin F",
+    date: "8/20/2021 17:45",
+    score: [1.655, 2.22],
+    score2: [+1.5, -1.5],
+    score3: [1.671, 2.35],
+    num: +65,
   },
 ];
 // 初始足球資料
@@ -93,13 +101,15 @@ function init() {
   gamesList.innerHTML = str;
 }
 init();
+
+// 足球選單點擊事件
 const socerBut = document.querySelector(".soc");
-console.log(socerBut);
 socerBut.addEventListener("click", function () {
   init();
 });
+
+// 電競選單點擊事件
 const lolBut = document.querySelector(".lol");
-console.log(lolBut);
 lolBut.addEventListener("click", function () {
   let str = "";
   gamesData.forEach(function (item) {
@@ -133,9 +143,43 @@ lolBut.addEventListener("click", function () {
   gamesList.innerHTML = str;
 });
 
-const socGroup = document.querySelector("#soc_group");
-console.log(socGroup);
+// 網球點擊事件
+const tennisBut = document.querySelector(".tennis");
+tennisBut.addEventListener("click", function () {
+    let str = "";
+    tennisData.forEach(function (item) {
+      let content = `
+          <div class="games"> 
+          <div class="metaData">
+              <p>${item.tittleF}</p>
+              <p>${item.tittleS}</p>
+              <p>${item.date}</p>
+          </div>
+          <div class="score">
+              <button><span>${item.score[0]}</span></button>
+              <button><span>${item.score[1]}</span></button> 
+          </div>
+          <div class="handicap">
+              <button>
+                  <span>${item.score2[0]}</span>
+                  <span>${item.score3[0]}</span>
+              </button>
+              <button>
+                  <span>${item.score2[1]}</span>
+                  <span>${item.score3[1]}</span>
+              </button>
+          </div>
+          <div class="empty">
+              <p>+${item.num}</p>
+          </div>
+      </div>`;
+      str += content;
+    });
+    gamesList.innerHTML = str;
+  });
 
+// 足球選單(內部)點擊事件
+const socGroup = document.querySelector("#soc_group");
 socGroup.addEventListener("click", function (e) {
   console.log(e.target.innerText);
 
@@ -174,34 +218,61 @@ socGroup.addEventListener("click", function (e) {
   gamesList.innerHTML = str;
 });
 
-// footer
-let footerData =[
-    {
-        tittle:"體育博彩",
-        content:["足球博彩","籃球博彩","棒球博彩","美式足球博彩","網球博彩","冰上曲棍球博彩"]
-    },
-    {
-        tittle:"關於Pinnacle(畢諾克）",
-        content:["企業","報導","合作夥伴","B2B","為何選畢諾克"]
-    },
-    {
-        tittle:"政策",
-        content:["責任博彩","條款和條件","隱私政策","cookie政策"]
-    },
-    {
-        tittle:"說明與資源",
-        content:["聯絡我們","博彩歸則","說明","系統狀態","網站地圖","付款選項"]
-    },
-    {
-        tittle:"社群",
-        content:["Facebook","Twitter","Linkedin","YouTube","Apple Podcast","Spotify","Soundcloud"]
-    }
-]
+// footer 假資料
+let footerData = [
+  {
+    tittle: "體育博彩",
+    content: [
+      "足球博彩",
+      "籃球博彩",
+      "棒球博彩",
+      "美式足球博彩",
+      "網球博彩",
+      "冰上曲棍球博彩",
+    ],
+  },
+  {
+    tittle: "關於Pinnacle(畢諾克）",
+    content: ["企業", "報導", "合作夥伴", "B2B", "為何選畢諾克"],
+  },
+  {
+    tittle: "政策",
+    content: ["責任博彩", "條款和條件", "隱私政策", "cookie政策"],
+  },
+  {
+    tittle: "說明與資源",
+    content: [
+      "聯絡我們",
+      "博彩歸則",
+      "說明",
+      "系統狀態",
+      "網站地圖",
+      "付款選項",
+    ],
+  },
+  {
+    tittle: "社群",
+    content: [
+      "Facebook",
+      "Twitter",
+      "Linkedin",
+      "YouTube",
+      "Apple Podcast",
+      "Spotify",
+      "Soundcloud",
+    ],
+  },
+];
 // footer卡關區因為tittle跟content數不同
-const footer = document.querySelector('.footer');
+const footer = document.querySelector(".footer");
+let footerContent =  footerData.map(function(item,index){
+    return item.content;
+})
+console.log(footerContent);
 let str = "";
-footerData.forEach(function(item){
-    let content = `<div><h3>${item.tittle}</h3>
+footerData.forEach(function (item) {
+  let content = `<div>
+    <h3>${item.tittle}</h3>
     <a href="#">${item.content[0]}</a>
     <a href="#">${item.content[1]}</a>
     <a href="#">${item.content[2]}</a>
@@ -209,8 +280,27 @@ footerData.forEach(function(item){
     <a href="#">${item.content[4]}</a>
     <a href="#">${item.content[5]}</a>
     <a href="#">${item.content[6]}</a>
-    </div>`
-    str+=content;
-    console.log(str);
+    </div>`;
+  str += content;
+//   console.log(str);
 });
-footer.innerHTML=str;
+footer.innerHTML = str;
+
+// 左邊選單
+document.querySelector(".hot_sports").addEventListener("click", function (e) {
+  console.log(e.target.innerText);
+  console.log(e.target);
+  if (e.target.innerText == "足球") {
+    document.querySelector(".soc").classList.add("labelShadow");
+  } else if (e.target.innerText == "電子競技") {
+    document.querySelector(".lol").classList.add("labelShadow");
+    document.querySelector(".soc").classList.remove("labelShadow");
+  } else if (e.target.innerText == "網球") {
+    document.querySelector(".lol").classList.remove("labelShadow");
+    document.querySelector(".tennis").classList.add("labelShadow");
+  } else if (e.target.innerText == "最受歡迎運動種類") {
+    document.querySelector(".tennis").classList.remove("labelShadow");
+    document.querySelector(".soc").classList.remove("labelShadow");
+    document.querySelector(".lol").classList.remove("labelShadow");
+  }
+});
