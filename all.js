@@ -304,3 +304,26 @@ document.querySelector(".hot_sports").addEventListener("click", function (e) {
     document.querySelector(".lol").classList.remove("labelShadow");
   }
 });
+
+// 中間 精華 賽中盤 聯盟橘條
+const myTabs = document.querySelectorAll(".data > a.dataA");
+console.log(myTabs);
+
+// 點擊移除橘條
+ function myTabClicks(tabClickEvent) {
+//   console.log(myTabs[1]);
+  for (var i = 0; i < myTabs.length; i++) {
+   myTabs[i].classList.remove("active");
+  }
+
+  const clickedTab = tabClickEvent.currentTarget; 
+
+  clickedTab.classList.add("active");
+
+  tabClickEvent.preventDefault();
+
+ }
+// 點擊事件
+for (let i = 0; i < myTabs.length; i++) {
+  myTabs[i].addEventListener("click", myTabClicks)
+}

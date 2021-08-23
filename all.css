@@ -23,6 +23,8 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    
 }
 h1{
     font-weight: 800;
@@ -62,11 +64,12 @@ table {
 }
 .nav1{
     margin: auto;
+    max-width: 1280px;
     width: 80%;
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #fff;
+    
 }
 .nav1 .right{
     color: #fff;
@@ -102,35 +105,45 @@ table {
 }
 .nav2{
     margin: auto;
-    width: 80%;
     display: flex;
-    /* background-color: rgb(6, 1, 53);  */
+    border-top: 1px solid hsla(0,0%,100%,.2);
     color: #fff;
+    background:linear-gradient(90deg, rgb(11,21,35) 0%, rgb(11,44,84) 100%);
 }
 .nav2 ul{
     display: flex;
-    padding: 10px 0;
+    /* padding: 10px 0; */
+    max-width: 1280px;
+    width: 80%;
+    margin: auto;
     
 }
 .nav2 ul li{
-    margin-right: 15px;
+    padding:15px;
+    font-size: 13px;
+    
+}
+.nav2 ul li:nth-child(1){
+    box-shadow: 0 -3px 0 0 #f50 inset;
+
 }
 .container_1{
-    padding: 3px;
+    position: relative;
     display: flex;
     margin: auto;
     width: 100%;
-    box-shadow: 0 0 5px 0 black;
+    box-shadow: 0px 1px 4px rgb(0 0 0 / 0.3);
 }
 .nav3{
     display: flex;
+    max-width: 1280px;
     width: 80%;
     margin: auto;
     justify-content: space-between;
     padding: 5px 0;
 }
 .nav3 input{
-    background-color: rgb(207, 206, 206);
+    background-color: rgb(225, 229, 232);
     border: none;
     height: 25px;
     padding: 0 10px;
@@ -138,42 +151,73 @@ table {
 .nav3 ::-webkit-input-placeholder{
     color: black;
 }
-.nav3 .right{
+.nav3 .rightSide{
     display: flex;
 }
 
-.right div{
+.rightSide .styli_option,.style_dropdown,.time,
+.style_option{
     display: flex;
-    margin-left: 10px;
-    padding-left: 3px;
-    border-left: 1px solid black;
+    margin: 0 3px;
+    padding: 0 15px; 
     align-items: center; 
+    font-size: 13px;
+    font-weight: 600;
+    border-left: 1px solid rgba(77, 77, 77, 0.2);
 }
-.right a{
+
+.rightSide .styli_option{
+    background: rgb(225, 229, 232);
+    padding: 2px;
+    border-radius: 3px;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    line-height: 18px;
+}
+
+a.style_selected,
+.style_buttons a:hover{
+    border-radius: 3px;
+    
+    background: white;
+    color: #0b1422;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px 0px;
+}
+.rightSide a{
     color:black;
     text-decoration: none;
+    padding: 3px 10px;
+}
+.allBackground{
+    background-color: rgb(241,243,247);
+    z-index: -3;
 }
 .container_2{
     display: flex;
+    max-width: 1280px;
     width: 80%;
     margin: auto;
+    /* background-color: rgb(241,243,247); */
 }
 
 .box_left{
     width: 15%;
 }
 .box_left>div{
-    padding: 15px;
+    padding: 15px 5px;
 }
 .hot .content{
     margin-top: 10px;
-    padding: 10px;
-    box-shadow: 1px 1px 2px black
+    padding: 10px 5px;
+    box-shadow: 0px 2px 10px rgb(0 0 0 / 0.2);
+    border-radius: 3px;
+    font-size: 13px;
 }
 .hot .content a{
     font-weight: 600;
     text-decoration: none;
-    color: darkblue;
+    color: rgb(7,36,67);
 }
 label{
     display: block;
@@ -214,6 +258,7 @@ input[type=radio]:checked + .content_sport{
 .main_top{
     border-radius: 3px;
     background-image: url("http://fakeimg.pl/700x100");
+    box-shadow: 0px 2px 3px rgb(0 0 0 / 0.3);
     
 }
 .main_top ul{
@@ -227,14 +272,27 @@ input[type=radio]:checked + .content_sport{
 .main_top .data{
     display: flex;
     background-color: rgba(7,36,67,.5);
+    height:35px;
+    align-items:center;
+    width:100%;
 }
+
 .main_top .data a{
-    margin: 10px 20px 10px 15px;
+    padding: 0px 15px;
     color: #fff;
     text-decoration: none;
+    line-height:35px;
 }
+.main_top .data a:hover{
+  box-shadow:0 -3px 0 0 #f50 inset;
+}
+
+.data .dataA.active{
+  box-shadow:0 -3px 0 0 #f50 inset;
+}
+
 .main_contentTittle{
-    background-color: rgb(6, 1, 53);
+    background-color: rgb(7,36,67);
     border-radius: 3px 3px 0 0;
     color: #fff;
     font-size: 13px;
@@ -245,7 +303,7 @@ input[type=radio]:checked + .content_sport{
     align-items: center;
     width: 100%;
     margin-top: 15px;
-    border-bottom: 5px solid rgb(52, 121, 248);
+    border-bottom: 4px solid rgb(52, 121, 248);
 }
 .main_contentHead{
     width: 100%;
@@ -262,8 +320,9 @@ input[type=radio]:checked + .content_sport{
     padding: 5px 15px;
     font-size: 13px;
     width: 100%;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgb(77 77 77 / 30%);
 }
+
 .games .score button,.handicap button{
     color:rgb(0, 110, 255);
     width: 60px;
@@ -314,11 +373,17 @@ input[type=radio]:checked + .content_sport{
     justify-content: center;
     display: flex;
 }
+.main{
+    box-shadow: 0px 2px 5px rgb(0 0 0 / 0.3);
+    background-color: #fff;
+}
 
 .box_right .top_tittle{
     padding: 10px;
     color: #fff;
-    background-color: rgb(6, 1, 53);
+    background-color: rgb(7,36,67);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
 }
 
 .box_right .tab{
@@ -350,6 +415,7 @@ h3{
     margin-bottom: 20px ;
     color: rgb(22, 22, 71);
     font-weight: 800;
+    font-size: 14px;
 }
 .tabBottom{
     width: 100%;
@@ -359,10 +425,8 @@ h3{
     background-color: rgb(194, 194, 194);
     overflow: scroll;
     overflow-x: hidden;
-    /* position: relative; */
 }
 .blue_bottom{
-    /* position: absolute; */
     bottom: 0;
     width: 100%;
     display: flex;
@@ -372,7 +436,7 @@ h3{
     color: #fff;
     font-size: 12px;
     padding: 10px;
-    /* justify-content: center; */
+    
 }
 .blue_bottom div{
     width: 100%;
@@ -425,7 +489,6 @@ h3{
     align-items: flex-start;
     width: 100%;
     height: 300px;
-    /* background-color:   palegoldenrod; */
 }
 
 .footer div a{
