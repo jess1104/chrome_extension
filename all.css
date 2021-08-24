@@ -154,6 +154,11 @@ table {
 .nav3 .rightSide{
     display: flex;
 }
+.moon{
+    margin-right: 5px;
+    padding-right: 10px;
+    border-right:1px solid rgba(77, 77, 77, 0.2) ;
+}
 
 .rightSide .styli_option,.style_dropdown,.time,
 .style_option{
@@ -168,7 +173,7 @@ table {
 
 .rightSide .styli_option{
     background: rgb(225, 229, 232);
-    padding: 2px;
+    padding: 3px;
     border-radius: 3px;
     display: flex;
     -ms-flex-align: center;
@@ -187,7 +192,7 @@ a.style_selected,
 .rightSide a{
     color:black;
     text-decoration: none;
-    padding: 3px 10px;
+    padding: 2px 10px;
 }
 .allBackground{
     background-color: rgb(241,243,247);
@@ -219,33 +224,55 @@ a.style_selected,
     text-decoration: none;
     color: rgb(7,36,67);
 }
-label{
-    display: block;
-    width: 100%;
+
+.hot_sports .contentBx .label{
+    position:relative;
+    cursor:pointer;
+    max-width: 300px;
     border-radius: 3px;
     padding: 10px;
+    font-size: 12px;
+    
+  }
+  .hot_sports .contentBx .label:hover{
+    box-shadow: 0px 2px 10px rgb(0 0 0 / 20%);
+  }
+  .label span{
+    position:absolute;
+    right:10px
+  }
+  .active .label span{
+    display:none
+  }
+  .hot_sports .contentBx .content{
+    position:relative;
+    height:0;
+    overflow:hidden;
+    transition:0.3s;
+    overflow-y:auto
+    
+  }
+  .hot_sports .contentBx.active .content{
+    height:150px;
+    margin-top: 10px;
+  }
+  .hot_sports .contentBx.active .label{
+    box-shadow: 0px 2px 10px rgb(0 0 0 / 20%);
+  }
+  .hot_sports .contentBx.active .label::before{
+    content:"ˇ";
+    position:absolute;
+    top:50%;
+    right:10px;
+    transform:translatey(-20%);
+    font-size:2em;
+    color: orangered;
+  }
+
+.content li{
+    padding: 5px 0 5px 20px;
+    font-size: 12px;
     cursor: pointer;
-    margin-bottom: 2px;
-}
-label:hover{
-    background-color: gray;
-    box-shadow: 1px 1px 2px black;
-}
-.content_sport{
-    height: 0;
-    overflow: hidden;
-    transition: 0.5s;
-    background-color: #fff;
-}
-input[type=radio]{
-    display: none;
-}
-input[type=radio]:checked + .content_sport{
-    height: 150px;
-    padding-left: 20px;
-}
-.content_sport li{
-    padding: 5px;
 }
 .box_middle{
     width: 60%;

@@ -96,7 +96,7 @@ function init() {
         </div>
     </div>`;
     str += content;
-    console.log(str);
+    // console.log(str);
   });
   gamesList.innerHTML = str;
 }
@@ -181,11 +181,11 @@ tennisBut.addEventListener("click", function () {
 // 足球選單(內部)點擊事件
 const socGroup = document.querySelector("#soc_group");
 socGroup.addEventListener("click", function (e) {
-  console.log(e.target.innerText);
+//   console.log(e.target.innerText);
 
   let str = "";
   socerData.forEach(function (item) {
-    console.log(item.event == e.target.innerText);
+    // console.log(item.event == e.target.innerText);
     if (e.target.innerText == item.event) {
       str += `
             <div class="games"> 
@@ -263,51 +263,31 @@ let footerData = [
     ],
   },
 ];
-// footer卡關區因為tittle跟content數不同
+// footer卡關區因為tittle跟content數不同（08.24OK)
 const footer = document.querySelector(".footer");
-let footerContent =  footerData.map(function(item,index){
-    return item.content;
-})
-console.log(footerContent);
 let str = "";
-footerData.forEach(function (item) {
-  let content = `<div>
-    <h3>${item.tittle}</h3>
-    <a href="#">${item.content[0]}</a>
-    <a href="#">${item.content[1]}</a>
-    <a href="#">${item.content[2]}</a>
-    <a href="#">${item.content[3]}</a>
-    <a href="#">${item.content[4]}</a>
-    <a href="#">${item.content[5]}</a>
-    <a href="#">${item.content[6]}</a>
+footerData.map(function(item,index){
+    const filteredContent = footerData.find((el)=>el.tittle===item.tittle)
+    
+    // console.log(filteredContent)
+    // console.log(filteredContent.content)
+    // const rContent = item.content.map((item)=>console.log(item))
+    const renderContent = item.content.map((content)=>`<a href ="#">${content}</a>`).join('');
+    // console.log(renderContent)
+    // console.log(renderContent)
+    str += `
+    <div >
+        <h3>${item.tittle}</h3>
+        ${renderContent}
     </div>`;
-  str += content;
-//   console.log(str);
 });
 footer.innerHTML = str;
 
-// 左邊選單
-document.querySelector(".hot_sports").addEventListener("click", function (e) {
-  console.log(e.target.innerText);
-  console.log(e.target);
-  if (e.target.innerText == "足球") {
-    document.querySelector(".soc").classList.add("labelShadow");
-  } else if (e.target.innerText == "電子競技") {
-    document.querySelector(".lol").classList.add("labelShadow");
-    document.querySelector(".soc").classList.remove("labelShadow");
-  } else if (e.target.innerText == "網球") {
-    document.querySelector(".lol").classList.remove("labelShadow");
-    document.querySelector(".tennis").classList.add("labelShadow");
-  } else if (e.target.innerText == "最受歡迎運動種類") {
-    document.querySelector(".tennis").classList.remove("labelShadow");
-    document.querySelector(".soc").classList.remove("labelShadow");
-    document.querySelector(".lol").classList.remove("labelShadow");
-  }
-});
+
 
 // 中間 精華 賽中盤 聯盟橘條
 const myTabs = document.querySelectorAll(".data > a.dataA");
-console.log(myTabs);
+// console.log(myTabs);
 
 // 點擊移除橘條
  function myTabClicks(tabClickEvent) {
@@ -326,4 +306,18 @@ console.log(myTabs);
 // 點擊事件
 for (let i = 0; i < myTabs.length; i++) {
   myTabs[i].addEventListener("click", myTabClicks)
+}
+// 左側選單手風琴
+const accordion = document.querySelectorAll(".contentBx ");
+// console.log(accordion);
+const label = document.querySelectorAll('span');
+// console.log(label[1].innerText)
+for(i=0 ; i<accordion.length; i++){
+  // console.log(accordion[i])
+  accordion[i].addEventListener('click',function(e){
+    // console.log(e.target.value==undefined);
+    if(e.target.value==undefined){
+        this.classList.toggle('active');
+    }
+  })
 }

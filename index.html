@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./all.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
@@ -44,6 +47,15 @@
         <input type="text" placeholder="搜尋" />
 
         <div class="rightSide">
+          <div class="moon">
+            <div class="styli_option">
+              <div class="style_buttons">
+                <a class="style_selected" href="#"></a>
+                <a href="#"><i class="far fa-moon"></i></a>
+              </div>
+            </div>
+          </div>
+         
           <div class="styli_option">
             <div class="style_buttons">
               <a class="style_selected" href="#">單一賠率</a>
@@ -58,7 +70,6 @@
           </div>
           <div class="time">
             <!-- 時間 -->
-            
           </div>
           <div class="style_option">
             <p>說明</p>
@@ -78,10 +89,9 @@
           <hr />
           <div class="hot_sports">
             <h3>最受歡迎運動種類</h3>
-            <label for="足球" class="soc">足球</label>
-            <div class="box">
-              <input type="radio" name="tab" id="足球" />
-              <div class="content_sport">
+            <div class="contentBx">
+              <div class="label soc">足球<span>123</span></div>
+              <div class="content">
                 <ul id="soc_group">
                   <li>冠軍聯賽</li>
                   <li>德甲</li>
@@ -91,10 +101,9 @@
                 </ul>
               </div>
             </div>
-            <label for="電子競技" class="lol">電子競技</label>
-            <div class="box">
-              <input type="radio" name="tab" id="電子競技" />
-              <div class="content_sport">
+            <div class="contentBx">
+              <div class="label lol">電子競技<span>22</span></div>
+              <div class="content">
                 <ul>
                   <li>刀塔2</li>
                   <li>反恐菁英</li>
@@ -103,31 +112,26 @@
                 </ul>
               </div>
             </div>
-            <label for="網球" class="tennis">網球</label>
-            <div class="box">
-              <input type="radio" name="tab" id="網球" />
+            <div class="contentBx">
+              <div class="label tennis">網球<span>55</span></div>
             </div>
-            <label for="棒球">棒球</label>
-            <div class="box">
-              <input type="radio" name="tab" id="棒球" />
+            <div class="contentBx">
+              <div class="label">棒球<span>34</span></div>
             </div>
-            <label for="籃球">籃球</label>
-            <div class="box">
-              <input type="radio" name="tab" id="籃球" />
+            <div class="contentBx">
+              <div class="label">籃球<span>76</span></div>
             </div>
-            <label for="美式足球">美式足球</label>
-            <div class="box">
-              <input type="radio" name="tab" id="美式足球" />
+            <div class="contentBx">
+              <div class="label">美式足球<span>04</span></div>
             </div>
           </div>
           <hr />
           <div class="hot_sports">
             <h3>A-Z運動</h3>
-            <label for="足球">足球</label>
-            <div class="box">
-              <input type="radio" name="tab" id="足球" />
-              <div class="content_sport">
-                <ul>
+            <div class="contentBx">
+              <div class="label soc">足球<span>123</span></div>
+              <div class="content">
+                <ul id="soc_group">
                   <li>冠軍聯賽</li>
                   <li>德甲</li>
                   <li>歐羅巴聯賽</li>
@@ -136,10 +140,9 @@
                 </ul>
               </div>
             </div>
-            <label for="電子競技">電子競技</label>
-            <div class="box">
-              <input type="radio" name="tab" id="電子競技" />
-              <div class="content_sport">
+            <div class="contentBx">
+              <div class="label lol">電子競技<span>22</span></div>
+              <div class="content">
                 <ul>
                   <li>刀塔2</li>
                   <li>反恐菁英</li>
@@ -148,21 +151,17 @@
                 </ul>
               </div>
             </div>
-            <label for="網球">網球</label>
-            <div class="box">
-              <input type="radio" name="tab" id="網球" />
+            <div class="contentBx">
+              <div class="label tennis">網球<span>55</span></div>
             </div>
-            <label for="棒球">棒球</label>
-            <div class="box">
-              <input type="radio" name="tab" id="棒球" />
+            <div class="contentBx">
+              <div class="label">棒球<span>34</span></div>
             </div>
-            <label for="籃球">籃球</label>
-            <div class="box">
-              <input type="radio" name="tab" id="籃球" />
+            <div class="contentBx">
+              <div class="label">籃球<span>76</span></div>
             </div>
-            <label for="美式足球">美式足球</label>
-            <div class="box">
-              <input type="radio" name="tab" id="美式足球" />
+            <div class="contentBx">
+              <div class="label">美式足球<span>04</span></div>
             </div>
           </div>
         </div>
@@ -284,13 +283,20 @@
         </div>
       </div>
     </div>
-    
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"
+      integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
+      crossorigin="anonymous"
+    ></script>
     <script>
       let Today = new Date();
       let h = Today.getHours();
       let m = Today.getMinutes();
       let s = Today.getSeconds();
-      document.querySelector(".time").innerHTML = `${h}:${m}:${s}<span>(GMT +08:00)</span>`;
+      document.querySelector(
+        ".time"
+      ).innerHTML = `${h}:${m}:${s}<span>(GMT +08:00)</span>`;
     </script>
     <script src="./all.js"></script>
   </body>
