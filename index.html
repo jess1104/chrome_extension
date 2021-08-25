@@ -16,10 +16,16 @@
   <body>
     <div class="container">
       <nav class="nav1">
-        <img
-          src="https://www.pinnacle.com/static/media/logo-on-dark.94bbcdf8.svg"
-          alt=""
-        />
+        <div class="navLogo">
+          <div id="icon">
+            <i class="fas fa-bars"></i>
+          </div>
+          <img
+            src="https://www.pinnacle.com/static/media/logo-on-dark.94bbcdf8.svg"
+            alt=""
+          />
+        </div>
+      
         <div class="right">
           <form action="">
             <input type="text" placeholder="電子郵件或帳號" />
@@ -204,8 +210,15 @@
               <!-- 賽程資料 -->
             </div>
           </div>
-          <div class="footer">
-            <!-- footer資料 -->
+          <div class="footerMobile">
+            <div class="topButton">
+              <button>
+                <a href="#">返回首頁</a>
+              </button>
+            </div>
+            <div class="footer">
+              <!-- footer資料 -->
+            </div>
           </div>
         </div>
         <div class="box_right">
@@ -289,6 +302,7 @@
       integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+"
       crossorigin="anonymous"
     ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script>
       let Today = new Date();
       let h = Today.getHours();

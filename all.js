@@ -321,3 +321,9 @@ for(i=0 ; i<accordion.length; i++){
     }
   })
 }
+// 漢堡選單
+$(document).ready(function(){
+    $('#icon').click(function(){
+        $('.nav2').toggleClass('showBar')
+    })
+})

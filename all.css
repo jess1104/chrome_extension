@@ -69,6 +69,7 @@ table {
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     
 }
 .nav1 .right{
@@ -195,6 +196,7 @@ a.style_selected,
     padding: 2px 10px;
 }
 .allBackground{
+
     background-color: rgb(241,243,247);
     z-index: -3;
 }
@@ -515,7 +517,7 @@ h3{
     justify-content: space-around;
     align-items: flex-start;
     width: 100%;
-    height: 300px;
+    /* height: 300px; */
 }
 
 .footer div a{
@@ -527,4 +529,142 @@ h3{
 }
 .labelShadow{
     box-shadow:1px 1px 2px black
+  }
+  .topButton{
+    display:none;
+  }
+  *.fa-bars{
+      display: none;
+  }
+  /* RWD */
+  @media (max-width:768px){
+    .box_left,.box_right{
+      display:none
+    }
+    .container{
+        position: fixed;
+        z-index: 100;
+    }
+    
+    .container .nav1{
+        width: 100%;
+        padding: 10px 3%;
+    }
+    .nav2{
+        position: fixed;
+        top:48px;
+        left: -100%;
+        width: 90%;
+        height: 100vh;
+        z-index: 20;
+        transition: all .5s;
+    }
+
+    .nav2 ul{
+        flex-direction: column;
+        margin: 0;
+    }
+    .nav2 ul li:nth-child(1),.nav2 li:hover{
+        box-shadow: 3px 0 0 #f50 inset;
+    }
+    .showBar{
+        left: 0%;
+    }
+    .navLogo{
+        display: flex;
+        align-items: center;
+    }
+    *.fa-bars{
+        display: block;
+        margin-right: 10px;
+        color: #fff;
+        font-size: x-large;
+        cursor: pointer;
+    }
+    .container_1{
+        display: none;
+    }
+    form input{
+        display: none;
+    }
+    .right p{
+        display: none;
+    }
+    .container_2{
+      width:100%
+    }
+    .box_middle{
+        /* position: relative;
+        top: 48px; */
+        margin: 48px 0;
+      width: 100%;
+      padding: 0;
+    }
+    .main_top h1{
+        display: none;
+    }
+    .main_top ul{
+        padding: 10px 20px;
+        background-color: rgb(241,243,247);
+    }
+    .main_top .data{
+        background-color: #fff;
+        height: 44px;
+        border-top: 1px solid rgba(102, 102, 102, 0.2);
+    }
+    .main_top .data a{
+        color: gray;
+        line-height: 44px;
+    }
+    .data .dataA.active{
+        box-shadow: 0 -3px 0 0 #f50 inset;
+        color: rgb(7,36,67);
+    }
+    .handicap,.empty{
+        display: none;
+    }
+    .score button span{
+        font-size:11px
+    }
+    div.allgames .games{
+        justify-content: space-between;
+    }
+    .metaData p:nth-child(3):after{
+        content: "+55>";
+        padding-left: 10px;
+    }
+    .footerMobile{
+        position: relative;
+        margin: 300px auto 0;
+        max-width: 100%;
+        width: calc(100% - 30px);
+    }
+    .topButton{
+        display: block;
+    }
+    .topButton button{
+        
+        width: 100%;
+        margin-bottom: 30px;
+        background-color: #334e6a;
+        border: none;
+        border-radius: 3px;
+    }
+    .topButton button a{
+        display: block;
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+    }
+    .footer{
+        margin: 5px 0;
+        flex-wrap: wrap;
+        padding:  0 10px;
+    }
+    .footer div:not(:last-child){
+        width: 50%;
+    }
+    .footer div:last-child{
+        width: 100%;
+    }
   }
