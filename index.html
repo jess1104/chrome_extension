@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
   </head>
-  <body>
+  <body onload="ShowTime()">
     <div class="container">
       <nav class="nav1">
         <div class="navLogo">
@@ -25,7 +25,7 @@
             alt=""
           />
         </div>
-      
+
         <div class="right">
           <form action="">
             <input type="text" placeholder="電子郵件或帳號" />
@@ -61,7 +61,7 @@
               </div>
             </div>
           </div>
-         
+
           <div class="styli_option">
             <div class="style_buttons">
               <a class="style_selected" href="#">單一賠率</a>
@@ -232,7 +232,7 @@
           </div>
           <div class="tabBottom">
             <span>全部移除</span>
-            <div class="detail_box">
+            <!-- <div class="detail_box">
               <p>賓菲加-燕豪芬</p>
               <p>讓分盤-全場比賽時間-歐洲足協－冠軍聯賽</p>
               <div class="data_test">
@@ -248,39 +248,7 @@
                 <input type="text" placeholder="獲勝" />
               </div>
             </div>
-            <div class="detail_box">
-              <p>賓菲加-燕豪芬</p>
-              <p>讓分盤-全場比賽時間-歐洲足協－冠軍聯賽</p>
-              <div class="data_test">
-                <div class="test_id">
-                  <span>Ferencaros +1.0</span>
-                </div>
-                <div class="test_content">
-                  <span>1.980</span>
-                </div>
-              </div>
-              <div class="input_box">
-                <input type="text" placeholder="注金" />
-                <input type="text" placeholder="獲勝" />
-              </div>
-            </div>
-            <div class="detail_box">
-              <p>賓菲加-燕豪芬</p>
-              <p>讓分盤-全場比賽時間-歐洲足協－冠軍聯賽</p>
-              <div class="data_test">
-                <div class="test_id">
-                  <span>Ferencaros +1.0</span>
-                </div>
-                <div class="test_content">
-                  <span>1.980</span>
-                </div>
-              </div>
-              <div class="input_box">
-                <input type="text" placeholder="注金" />
-                <input type="text" placeholder="獲勝" />
-              </div>
-            </div>
-          </div>
+          --></div>
           <div class="blue_bottom">
             <div><span>總注金</span><span>EUR 0.00</span></div>
             <div><span>總彩金</span><span>EUR 0.00</span></div>
@@ -304,13 +272,17 @@
     ></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script>
-      let Today = new Date();
-      let h = Today.getHours();
-      let m = Today.getMinutes();
-      let s = Today.getSeconds();
-      document.querySelector(
-        ".time"
-      ).innerHTML = `${h}:${m}:${s}<span>(GMT +08:00)</span>`;
+      function ShowTime() {
+        let Today = new Date();
+        let h = Today.getHours();
+        let m = Today.getMinutes();
+        let s = Today.getSeconds();
+        if(s<10){s="0"+s;}
+        document.querySelector(
+          ".time"
+        ).innerHTML = `${h}:${m}:${s}<span>(GMT +08:00)</span>`;
+        setTimeout('ShowTime()',1000);
+      }
     </script>
     <script src="./all.js"></script>
   </body>

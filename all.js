@@ -146,9 +146,9 @@ lolBut.addEventListener("click", function () {
 // 網球點擊事件
 const tennisBut = document.querySelector(".tennis");
 tennisBut.addEventListener("click", function () {
-    let str = "";
-    tennisData.forEach(function (item) {
-      let content = `
+  let str = "";
+  tennisData.forEach(function (item) {
+    let content = `
           <div class="games"> 
           <div class="metaData">
               <p>${item.tittleF}</p>
@@ -173,15 +173,15 @@ tennisBut.addEventListener("click", function () {
               <p>+${item.num}</p>
           </div>
       </div>`;
-      str += content;
-    });
-    gamesList.innerHTML = str;
+    str += content;
   });
+  gamesList.innerHTML = str;
+});
 
 // 足球選單(內部)點擊事件
 const socGroup = document.querySelector("#soc_group");
 socGroup.addEventListener("click", function (e) {
-//   console.log(e.target.innerText);
+  //   console.log(e.target.innerText);
 
   let str = "";
   socerData.forEach(function (item) {
@@ -266,16 +266,18 @@ let footerData = [
 // footer卡關區因為tittle跟content數不同（08.24OK)
 const footer = document.querySelector(".footer");
 let str = "";
-footerData.map(function(item,index){
-    const filteredContent = footerData.find((el)=>el.tittle===item.tittle)
-    
-    // console.log(filteredContent)
-    // console.log(filteredContent.content)
-    // const rContent = item.content.map((item)=>console.log(item))
-    const renderContent = item.content.map((content)=>`<a href ="#">${content}</a>`).join('');
-    // console.log(renderContent)
-    // console.log(renderContent)
-    str += `
+footerData.map(function (item, index) {
+  const filteredContent = footerData.find((el) => el.tittle === item.tittle);
+
+  // console.log(filteredContent)
+  // console.log(filteredContent.content)
+  // const rContent = item.content.map((item)=>console.log(item))
+  const renderContent = item.content
+    .map((content) => `<a href ="#">${content}</a>`)
+    .join("");
+  // console.log(renderContent)
+  // console.log(renderContent)
+  str += `
     <div >
         <h3>${item.tittle}</h3>
         ${renderContent}
@@ -283,47 +285,98 @@ footerData.map(function(item,index){
 });
 footer.innerHTML = str;
 
-
-
 // 中間 精華 賽中盤 聯盟橘條
 const myTabs = document.querySelectorAll(".data > a.dataA");
 // console.log(myTabs);
 
-// 點擊移除橘條
- function myTabClicks(tabClickEvent) {
-//   console.log(myTabs[1]);
+// 點擊移除其餘橘條並添加指定橘條
+function myTabClicks(tabClickEvent) {
+  console.log(tabClickEvent.currentTarget);
+  //   移除所有class active
   for (var i = 0; i < myTabs.length; i++) {
-   myTabs[i].classList.remove("active");
+    myTabs[i].classList.remove("active");
   }
 
-  const clickedTab = tabClickEvent.currentTarget; 
+  const clickedTab = tabClickEvent.currentTarget;
 
   clickedTab.classList.add("active");
 
-  tabClickEvent.preventDefault();
-
- }
+  //   tabClickEvent.preventDefault();
+}
 // 點擊事件
 for (let i = 0; i < myTabs.length; i++) {
-  myTabs[i].addEventListener("click", myTabClicks)
+  myTabs[i].addEventListener("click", myTabClicks);
 }
 // 左側選單手風琴
 const accordion = document.querySelectorAll(".contentBx ");
 // console.log(accordion);
-const label = document.querySelectorAll('span');
+const label = document.querySelectorAll("span");
 // console.log(label[1].innerText)
-for(i=0 ; i<accordion.length; i++){
+for (i = 0; i < accordion.length; i++) {
   // console.log(accordion[i])
-  accordion[i].addEventListener('click',function(e){
+  accordion[i].addEventListener("click", function (e) {
     // console.log(e.target.value==undefined);
-    if(e.target.value==undefined){
-        this.classList.toggle('active');
+    if (e.target.value == undefined) {
+      this.classList.toggle("active");
     }
-  })
+  });
 }
 // 漢堡選單
-$(document).ready(function(){
-    $('#icon').click(function(){
-        $('.nav2').toggleClass('showBar')
-    })
-})
+$(document).ready(function () {
+  $("#icon").click(function () {
+    $(".nav2").toggleClass("showBar");
+  });
+});
+// 點擊score按鈕添置右邊選單
+
+$(function () {
+  const gamesBut = $(".games button");
+
+  let detail = 0;
+  $(".games button").click(function (e) {
+    console.log(e.target.nodeName == "BUTTON");
+    // if (e.target.nodeName !== "BUTTON") {
+    //   return;
+    // }
+    $(this).toggleClass("clickBut");
+    // console.log(e.target.className == "clickBut");
+    if (e.target.className == "clickBut") {
+      $(".tabBottom").append(`<div class="detail_box">
+          <p>賓菲加-燕豪芬</p>
+          <p>讓分盤-全場比賽時間-歐洲足協－冠軍聯賽</p>
+          <div class="data_test">
+            <div class="test_id">
+              <span>Ferencaros +1.0</span>
+            </div>
+            <div class="test_content">
+              <span>1.980</span>
+            </div>
+          </div>
+          <div class="input_box">
+            <input type="text" placeholder="注金" />
+            <input type="text" placeholder="獲勝" />
+          </div>
+        </div>`);
+    } else {
+      // 要改成一個toggle掉只會remove一個div
+      $(".detail_box").remove();
+    }
+    // 出錯
+    // console.log($('.games button'))
+    // for(i=0; i<gamesBut.length; i++){
+    //     gamesBut[i].addEventListener('click',function clickAdd(e){
+    //         console.log(e.currentTarget);
+    //         const clickedTab = e.currentTarget;
+    //     clickedTab.toggleClass('clickBut');
+    //         clickedTab.classList.add('clickBut');
+    //     })
+    //     console.log(gamesBut[i])
+    // }
+    // console.log($('.tabBottom span'));
+  });
+  // 全部移除
+  $(".tabBottom span").click(function () {
+    $(".detail_box").remove();
+    $(".games button").removeClass("clickBut");
+  });
+});
