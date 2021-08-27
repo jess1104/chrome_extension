@@ -99,11 +99,11 @@
               <div class="label soc">足球<span>123</span></div>
               <div class="content">
                 <ul id="soc_group">
-                  <li>冠軍聯賽</li>
-                  <li>德甲</li>
-                  <li>歐羅巴聯賽</li>
-                  <li>甲組</li>
-                  <li>超級聯賽</li>
+                  <li id="champ">冠軍聯賽 <span>122</span></li>
+                  <li id="german">德甲<span>43</span></li>
+                  <li>歐羅巴聯賽<span>22</span></li>
+                  <li>甲組<span>55</span></li>
+                  <li>超級聯賽<span>15</span></li>
                 </ul>
               </div>
             </div>
@@ -111,10 +111,10 @@
               <div class="label lol">電子競技<span>22</span></div>
               <div class="content">
                 <ul>
-                  <li>刀塔2</li>
-                  <li>反恐菁英</li>
-                  <li>英雄聯盟</li>
-                  <li>所有比賽</li>
+                  <li>刀塔2<span>12</span></li>
+                  <li>反恐菁英<span>33</span></li>
+                  <li>英雄聯盟<span>64</span></li>
+                  <li>所有比賽<span>25</span></li>
                 </ul>
               </div>
             </div>
@@ -277,6 +277,8 @@
         let h = Today.getHours();
         let m = Today.getMinutes();
         let s = Today.getSeconds();
+        if(h<10){h="0"+h}
+        if(m<10){m="0"+m;}
         if(s<10){s="0"+s;}
         document.querySelector(
           ".time"

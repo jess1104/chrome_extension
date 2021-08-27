@@ -8,7 +8,7 @@ let socerData = [
     score2: [+2.5, -2.0],
     score3: [1.99, 1.862],
     num: +9,
-    event: "冠軍聯賽",
+    event: "champ",
   },
   {
     tittleF: "馬爾默足球會",
@@ -18,7 +18,7 @@ let socerData = [
     score2: [+2.0, -2.0],
     score3: [1.97, 1.562],
     num: +10,
-    event: "德甲",
+    event: "german",
   },
   {
     tittleF: "西班牙人",
@@ -28,7 +28,7 @@ let socerData = [
     score2: [+1.5, -3.0],
     score3: [1.49, 1.862],
     num: +29,
-    event: "冠軍聯賽",
+    event: "champ",
   },
 ];
 // 電競假資料
@@ -104,9 +104,58 @@ init();
 
 // 足球選單點擊事件
 const socerBut = document.querySelector(".soc");
-socerBut.addEventListener("click", function () {
-  init();
-});
+function socer(){
+  socerBut.addEventListener("click", function () {
+    init();
+    $('.content li').removeClass("orange");
+    $(function(){
+      console.log($('.games button'));
+      $(".games button").click(function (e) {
+        console.log(e.target.nodeName == "BUTTON");
+        if (e.target.nodeName !== "BUTTON") {
+          return;
+        }
+        $(this).toggleClass("clickBut");
+        // console.log(e.target.className == "clickBut");
+        if (e.target.className == "clickBut") {
+          $(".tabBottom").append(`<div class="detail_box" id="1-1">
+              <p>賓菲加-燕豪芬</p>
+              <p>讓分盤-全場比賽時間-歐洲足協－冠軍聯賽</p>
+              <div class="data_test">
+                <div class="test_id">
+                  <span>Ferencaros +1.0</span>
+                </div>
+                <div class="test_content">
+                  <span>1.980</span>
+                </div>
+              </div>
+              <div class="input_box">
+                <input type="text" placeholder="注金" />
+                <input type="text" placeholder="獲勝" />
+              </div>
+            </div>`);
+        } else {
+          // 要改成一個toggle掉只會remove一個div
+          $("#1-1").remove();
+        }
+        // 出錯
+        // console.log($('.games button'))
+        // for(i=0; i<gamesBut.length; i++){
+        //     gamesBut[i].addEventListener('click',function clickAdd(e){
+        //         console.log(e.currentTarget);
+        //         const clickedTab = e.currentTarget;
+        //     clickedTab.toggleClass('clickBut');
+        //         clickedTab.classList.add('clickBut');
+        //     })
+        //     console.log(gamesBut[i])
+        // }
+        // console.log($('.tabBottom span'));
+      });
+    });
+  });
+}
+
+
 
 // 電競選單點擊事件
 const lolBut = document.querySelector(".lol");
@@ -141,6 +190,51 @@ lolBut.addEventListener("click", function () {
     str += content;
   });
   gamesList.innerHTML = str;
+  $('.content li').removeClass("orange");
+  $(function(){
+    console.log($('.games button'));
+    $(".games button").click(function (e) {
+      console.log(e.target.nodeName == "BUTTON");
+      if (e.target.nodeName !== "BUTTON") {
+        return;
+      }
+      $(this).toggleClass("clickBut");
+      // console.log(e.target.className == "clickBut");
+      if (e.target.className == "clickBut") {
+        $(".tabBottom").append(`<div class="detail_box" id="1-1">
+            <p>賓菲加-燕豪芬</p>
+            <p>讓分盤-全場比賽時間-歐洲足協－冠軍聯賽</p>
+            <div class="data_test">
+              <div class="test_id">
+                <span>Ferencaros +1.0</span>
+              </div>
+              <div class="test_content">
+                <span>1.980</span>
+              </div>
+            </div>
+            <div class="input_box">
+              <input type="text" placeholder="注金" />
+              <input type="text" placeholder="獲勝" />
+            </div>
+          </div>`);
+      } else {
+        // 要改成一個toggle掉只會remove一個div
+        $("#1-1").remove();
+      }
+      // 出錯
+      // console.log($('.games button'))
+      // for(i=0; i<gamesBut.length; i++){
+      //     gamesBut[i].addEventListener('click',function clickAdd(e){
+      //         console.log(e.currentTarget);
+      //         const clickedTab = e.currentTarget;
+      //     clickedTab.toggleClass('clickBut');
+      //         clickedTab.classList.add('clickBut');
+      //     })
+      //     console.log(gamesBut[i])
+      // }
+      // console.log($('.tabBottom span'));
+    });
+  });
 });
 
 // 網球點擊事件
@@ -176,47 +270,155 @@ tennisBut.addEventListener("click", function () {
     str += content;
   });
   gamesList.innerHTML = str;
+  $(function(){
+    console.log($('.games button'));
+    $(".games button").click(function (e) {
+      console.log(e.target.nodeName == "BUTTON");
+      if (e.target.nodeName !== "BUTTON") {
+        return;
+      }
+      $(this).toggleClass("clickBut");
+      // console.log(e.target.className == "clickBut");
+      if (e.target.className == "clickBut") {
+        $(".tabBottom").append(`<div class="detail_box" id="1-1">
+            <p>賓菲加-燕豪芬</p>
+            <p>讓分盤-全場比賽時間-歐洲足協－冠軍聯賽</p>
+            <div class="data_test">
+              <div class="test_id">
+                <span>Ferencaros +1.0</span>
+              </div>
+              <div class="test_content">
+                <span>1.980</span>
+              </div>
+            </div>
+            <div class="input_box">
+              <input type="text" placeholder="注金" />
+              <input type="text" placeholder="獲勝" />
+            </div>
+          </div>`);
+      } else {
+        // 要改成一個toggle掉只會remove一個div
+        $("#1-1").remove();
+      }
+      // 出錯
+      // console.log($('.games button'))
+      // for(i=0; i<gamesBut.length; i++){
+      //     gamesBut[i].addEventListener('click',function clickAdd(e){
+      //         console.log(e.currentTarget);
+      //         const clickedTab = e.currentTarget;
+      //     clickedTab.toggleClass('clickBut');
+      //         clickedTab.classList.add('clickBut');
+      //     })
+      //     console.log(gamesBut[i])
+      // }
+      // console.log($('.tabBottom span'));
+    });
+  });
+  
 });
+
+// 左側選單手風琴
+const accordion = document.querySelectorAll(".contentBx ");
+// console.log(accordion);
+const label = document.querySelectorAll("span");
+// console.log(label[1].innerText)
+for (i = 0; i < accordion.length; i++) {
+  // console.log(accordion[i])
+  accordion[i].addEventListener("click", function (e) {
+    // console.log(e.target.value==undefined);
+    if (e.target.value == undefined) {
+      this.classList.toggle("active");
+    }
+  });
+}
 
 // 足球選單(內部)點擊事件
 const socGroup = document.querySelector("#soc_group");
-socGroup.addEventListener("click", function (e) {
-  //   console.log(e.target.innerText);
-
-  let str = "";
-  socerData.forEach(function (item) {
-    // console.log(item.event == e.target.innerText);
-    if (e.target.innerText == item.event) {
-      str += `
-            <div class="games"> 
-                <div class="metaData">
-                    <p>${item.tittleF}</p>
-                    <p>${item.tittleS}</p>
-                    <p>${item.date}</p>
+function socorInner(){
+  socGroup.addEventListener("click", function (e) {
+    //   console.log(e.target.innerText);
+  
+    let str = "";
+    socerData.forEach(function (item) {
+      console.log( e.target.id);
+      if (e.target.id == item.event) {
+        str += `
+              <div class="games"> 
+                  <div class="metaData">
+                      <p>${item.tittleF}</p>
+                      <p>${item.tittleS}</p>
+                      <p>${item.date}</p>
+                  </div>
+                  <div class="score">
+                      <button><span>${item.score[0]}</span></button>
+                      <button><span>${item.score[1]}</span></button> 
+                      <button><span>${item.score[2]}</span></button>
+                  </div>
+                  <div class="handicap">
+                      <button>
+                          <span>${item.score2[0]}</span>
+                          <span>${item.score3[0]}</span>
+                      </button>
+                      <button>
+                          <span>${item.score2[1]}</span>
+                          <span>${item.score3[1]}</span>
+                      </button>
+                  </div>
+                  <div class="empty">
+                      <p>+${item.num}</p>
+                  </div>
+              </div>`;
+      }
+    });
+    gamesList.innerHTML = str;
+    $(function(){
+      console.log($('.games button'));
+      $(".games button").click(function (e) {
+        console.log(e.target.nodeName == "BUTTON");
+        if (e.target.nodeName !== "BUTTON") {
+          return;
+        }
+        $(this).toggleClass("clickBut");
+        // console.log(e.target.className == "clickBut");
+        if (e.target.className == "clickBut") {
+          $(".tabBottom").append(`<div class="detail_box" id="1-1">
+              <p>賓菲加-燕豪芬</p>
+              <p>讓分盤-全場比賽時間-歐洲足協－冠軍聯賽</p>
+              <div class="data_test">
+                <div class="test_id">
+                  <span>Ferencaros +1.0</span>
                 </div>
-                <div class="score">
-                    <button><span>${item.score[0]}</span></button>
-                    <button><span>${item.score[1]}</span></button> 
-                    <button><span>${item.score[2]}</span></button>
+                <div class="test_content">
+                  <span>1.980</span>
                 </div>
-                <div class="handicap">
-                    <button>
-                        <span>${item.score2[0]}</span>
-                        <span>${item.score3[0]}</span>
-                    </button>
-                    <button>
-                        <span>${item.score2[1]}</span>
-                        <span>${item.score3[1]}</span>
-                    </button>
-                </div>
-                <div class="empty">
-                    <p>+${item.num}</p>
-                </div>
-            </div>`;
-    }
+              </div>
+              <div class="input_box">
+                <input type="text" placeholder="注金" />
+                <input type="text" placeholder="獲勝" />
+              </div>
+            </div>`);
+        } else {
+          // 要改成一個toggle掉只會remove一個div
+          $("#1-1").remove();
+        }
+        // 出錯
+        // console.log($('.games button'))
+        // for(i=0; i<gamesBut.length; i++){
+        //     gamesBut[i].addEventListener('click',function clickAdd(e){
+        //         console.log(e.currentTarget);
+        //         const clickedTab = e.currentTarget;
+        //     clickedTab.toggleClass('clickBut');
+        //         clickedTab.classList.add('clickBut');
+        //     })
+        //     console.log(gamesBut[i])
+        // }
+        // console.log($('.tabBottom span'));
+      });
+    });
+    
   });
-  gamesList.innerHTML = str;
-});
+}
+// socorInner();
 
 // footer 假資料
 let footerData = [
@@ -307,20 +509,9 @@ function myTabClicks(tabClickEvent) {
 for (let i = 0; i < myTabs.length; i++) {
   myTabs[i].addEventListener("click", myTabClicks);
 }
-// 左側選單手風琴
-const accordion = document.querySelectorAll(".contentBx ");
-// console.log(accordion);
-const label = document.querySelectorAll("span");
-// console.log(label[1].innerText)
-for (i = 0; i < accordion.length; i++) {
-  // console.log(accordion[i])
-  accordion[i].addEventListener("click", function (e) {
-    // console.log(e.target.value==undefined);
-    if (e.target.value == undefined) {
-      this.classList.toggle("active");
-    }
-  });
-}
+
+
+
 // 漢堡選單
 $(document).ready(function () {
   $("#icon").click(function () {
@@ -331,52 +522,88 @@ $(document).ready(function () {
 
 $(function () {
   const gamesBut = $(".games button");
+  socer(orangeButton());
+  socorInner();
 
-  let detail = 0;
-  $(".games button").click(function (e) {
-    console.log(e.target.nodeName == "BUTTON");
-    // if (e.target.nodeName !== "BUTTON") {
-    //   return;
-    // }
-    $(this).toggleClass("clickBut");
-    // console.log(e.target.className == "clickBut");
-    if (e.target.className == "clickBut") {
-      $(".tabBottom").append(`<div class="detail_box">
-          <p>賓菲加-燕豪芬</p>
-          <p>讓分盤-全場比賽時間-歐洲足協－冠軍聯賽</p>
-          <div class="data_test">
-            <div class="test_id">
-              <span>Ferencaros +1.0</span>
+  function orangeButton(){
+    console.log($(".games button"))
+    $(".games button").click(function (e) {
+      console.log(e.target.nodeName == "BUTTON");
+      if (e.target.nodeName !== "BUTTON") {
+        return;
+      }
+      $(this).toggleClass("clickBut");
+      // console.log(e.target.className == "clickBut");
+      if (e.target.className == "clickBut") {
+        $(".tabBottom").append(`<div class="detail_box">
+            <p>賓菲加-燕豪芬</p>
+            <p>讓分盤-全場比賽時間-歐洲足協－冠軍聯賽</p>
+            <div class="data_test">
+              <div class="test_id">
+                <span>Ferencaros +1.0</span>
+              </div>
+              <div class="test_content">
+                <span>1.980</span>
+              </div>
             </div>
-            <div class="test_content">
-              <span>1.980</span>
+            <div class="input_box">
+              <input type="text" placeholder="注金" />
+              <input type="text" placeholder="獲勝" />
             </div>
-          </div>
-          <div class="input_box">
-            <input type="text" placeholder="注金" />
-            <input type="text" placeholder="獲勝" />
-          </div>
-        </div>`);
-    } else {
-      // 要改成一個toggle掉只會remove一個div
-      $(".detail_box").remove();
-    }
-    // 出錯
-    // console.log($('.games button'))
-    // for(i=0; i<gamesBut.length; i++){
-    //     gamesBut[i].addEventListener('click',function clickAdd(e){
-    //         console.log(e.currentTarget);
-    //         const clickedTab = e.currentTarget;
-    //     clickedTab.toggleClass('clickBut');
-    //         clickedTab.classList.add('clickBut');
-    //     })
-    //     console.log(gamesBut[i])
-    // }
-    // console.log($('.tabBottom span'));
-  });
+          </div>`);
+      } else {
+        // 要改成一個toggle掉只會remove一個div
+        $(".detail_box").remove();
+      }
+      // 出錯
+      // console.log($('.games button'))
+      // for(i=0; i<gamesBut.length; i++){
+      //     gamesBut[i].addEventListener('click',function clickAdd(e){
+      //         console.log(e.currentTarget);
+      //         const clickedTab = e.currentTarget;
+      //     clickedTab.toggleClass('clickBut');
+      //         clickedTab.classList.add('clickBut');
+      //     })
+      //     console.log(gamesBut[i])
+      // }
+      // console.log($('.tabBottom span'));
+    });
+  }
+
   // 全部移除
   $(".tabBottom span").click(function () {
     $(".detail_box").remove();
     $(".games button").removeClass("clickBut");
   });
+
+  // 點擊足球內部改成橘色
+  $('.content li').click(function(e){
+    $('.content li').removeClass("orange")
+    $(this).addClass("orange")
+  })
 });
+
+// 新增左側手風琴內部資料（要先把寫死資料改成假資料）
+// socerInnerLi = [
+//   {subject:'冠軍聯賽'},
+//   {subject:'德甲'},
+//   {subject:'歐羅巴聯賽'},
+//   {subject:'甲組'},
+//   {subject:'超級聯賽'},
+// ]
+// 0: {subject: "冠軍聯賽", games: 56}
+// 1: {subject: "德甲", games: 61}
+// 2: {subject: "歐羅巴聯賽", games: 70}
+// 3: {subject: "甲組", games: 19}
+// 4: {subject: "超級聯賽", games: 61}
+
+// // 亂數
+// socerInnerLi.map(function(item){
+//   let randomNum = Math.ceil(Math.random()*100)
+//   item['games']= randomNum;
+// });
+// // console.log(socerInnerLi)
+// // 放入data
+// for(i=0 ; i<socerInnerLi.length ; i++){
+//   $('#soc_group').append(`<li>${socerInnerLi[i].subject} <span>${socerInnerLi[i].games}</span></li>`)
+// }

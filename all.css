@@ -272,9 +272,21 @@ a.style_selected,
   }
 
 .content li{
-    padding: 5px 0 5px 20px;
+    display: flex;
+    padding: 6px 10px;
     font-size: 12px;
     cursor: pointer;
+    
+}
+.content li.orange{
+    color: orangered;
+}
+.content span{
+    margin-left: auto;
+}
+.content li:hover{
+    box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+    border-radius: 3px;
 }
 .box_middle{
     width: 60%;
