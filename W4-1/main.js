@@ -13,24 +13,27 @@ const exchange = document.getElementById("exchange");
 const output_from = document.getElementById("from");
 const output_to = document.getElementById("to");
 
-// 點擊中間轉換圓鈕事件
+
+//點擊中間轉換圓鈕事件
 exchange.addEventListener("click",()=>{
     [from_currency.value, to_currency.value] = [to_currency.value, from_currency.value];
     calculate();
 });
 
-var to_amount = 0;
-// 計算事件
+let to_amount = 0;
+//計算事件
 function calculate(){
     const from_currency_value = from_currency.value;
     const to_currency_value = to_currency.value;
-    // api
+    //api
     const exchangerateUrl = `https://v6.exchangerate-api.com/v6/3b0ea361e3bbb6b38bf6228c/latest/${from_currency_value}`
     fetch(exchangerateUrl)
-    .then(res => {
-        res.json();
-    console.log(res)
-    })
+    .then(res =>{
+        //res.ok如果是 true 則表示狀態碼在於 200~299 之間
+        // console.log(res)
+        if(!res.ok){alert('網站有問題，稍待片刻')};
+        return res.json();
+        })
     .then(res => {
         // console.log(res)
         const rate = res.conversion_rates[to_currency_value];
@@ -43,8 +46,6 @@ function calculate(){
         output_to.innerText = `${to_amount} ${to_currency_value}`;
         output_amount.style.display="block";
     }).catch(function(err){
-        // const title = document.getElementsByTagName('h1');
-        // title.innerText="不好意思系統出錯，正進行維護"
         console.log(err)
     } )
 }

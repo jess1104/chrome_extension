@@ -1,12 +1,20 @@
+//上方顯示區
 const display1El = document.querySelector('.display-1');
+//中間顯示區
 const display2El = document.querySelector('.display-2');
-const romanNumEl = document.querySelector('.romanNum');//羅馬數字元素
+//羅馬數字元素
+const romanNumEl = document.querySelector('.romanNum');
+// 試算區
 const tempResultEl = document.querySelector('.tempResult');
+// 按鈕1-9
 const numbersEl = document.querySelectorAll('.number');
 // + - * %
 const operationEl = document.querySelectorAll('.operation');
+// =
 const equalEl = document.querySelector('.equal');
+// C
 const clearAllEl = document.querySelector('.allClear');
+// CE
 const clearLastEl = document.querySelector('.lastEntityClear');
 
 // 放值
@@ -16,7 +24,7 @@ let result = null;
 let lastOperation = '';
 // .不能重複
 let haveDot = false;
-let romanNum = '';
+
 
 // 渲染按鈕=>上面顯示
 numbersEl.forEach( number =>{
@@ -38,15 +46,19 @@ numbersEl.forEach( number =>{
 operationEl.forEach(operation =>{
     operation.addEventListener('click',(e)=>{
         // console.log(!dis2Num);
-        if(!dis2Num) return;//###大格沒有值會return
+        //###大格沒有值會return
+        if(!dis2Num) return;
     
         haveDot = false;
-        const operationName = e.target.innerText;//加減乘除名字
+        //加減乘除名字
+        const operationName = e.target.innerText;
         if(dis1Num && dis2Num && lastOperation){
             mathOperation();
         }else{
-            result = parseFloat(dis2Num);//字串轉為數字
+            //字串轉為數字
+            result = parseFloat(dis2Num);
         }
+        // console.log(result)
         clearVar(operationName);
         lastOperation = operationName;
         // console.log(result);
@@ -55,28 +67,51 @@ operationEl.forEach(operation =>{
 })
 
 // 清空大格
-function clearVar(name = ''){
+function clearVar(name=''){
     // 顯示於最上方
+    // console.log(name)
     dis1Num += dis2Num+ ' ' + name + ' ';
     display1El.innerText = dis1Num;
+    //中間大格清空
     display2El.innerText = '';
+    //2儲存空間清空
     dis2Num = '';
+    // console.log(dis2Num);
     tempResultEl.innerText = result;
 }
 
 // 計算函式
 // 轉換加減乘除
 function mathOperation(){
-    if(lastOperation === 'x'){
+//     if(lastOperation === 'x'){
+//         result = parseFloat(result) * parseFloat(dis2Num);
+//     }else if(lastOperation === '+'){
+//         result = parseFloat(result) + parseFloat(dis2Num);
+//     }else if(lastOperation === '-'){
+//         result = parseFloat(result) - parseFloat(dis2Num);
+//     }else if(lastOperation === '/'){
+//         result = parseFloat(result) / parseFloat(dis2Num);
+//     }else if(lastOperation === '%'){
+//         result = parseFloat(result) % parseFloat(dis2Num);
+//     }
+// 轉成switch
+    switch(lastOperation){
+    case 'x':
         result = parseFloat(result) * parseFloat(dis2Num);
-    }else if(lastOperation === '+'){
+        break;
+    case '+':
         result = parseFloat(result) + parseFloat(dis2Num);
-    }else if(lastOperation === '-'){
+        break;
+    case '-':
         result = parseFloat(result) - parseFloat(dis2Num);
-    }else if(lastOperation === '/'){
+        break;
+    case '/':
         result = parseFloat(result) / parseFloat(dis2Num);
-    }else if(lastOperation === '%'){
+        break;
+    case '%':
         result = parseFloat(result) % parseFloat(dis2Num);
+        break;
+
     }
 }
 
@@ -90,8 +125,8 @@ equalEl.addEventListener('click',(e)=>{
     tempResultEl.innerText= '';
     dis2Num = result;
     dis1Num = ''; 
-    romanNum = parseInt(result);//romanNum要是整數
-    romanName = intToRoman(romanNum);
+    // romanNum = parseInt(result);//romanNum要是整數
+    romanName = intToRoman(result);
     // console.log(romanName);
     romanNumEl.innerText = romanName//羅馬數字
 
@@ -137,6 +172,7 @@ const ROMANS = [
 ]
 
 function intToRoman(num) {
+    num = parseInt(num);
     let result = "";
     //直接去跑陣列的長度，從1000、900、500、400...處理到1
     for (let i = 0; i < ROMANS.length; i++) {
@@ -154,7 +190,7 @@ function intToRoman(num) {
     //跑完後num會剩0，result也會是處理對應完的羅馬字元
     return result;
 };
-// console.log(intToRoman(1));
+// console.log(intToRoman(1.5));
 
 // 重整後留值
     romanLocal = localStorage.getItem("roman");
