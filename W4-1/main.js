@@ -12,7 +12,19 @@ const output_amount = document.getElementById("output-text");
 const exchange = document.getElementById("exchange");
 const output_from = document.getElementById("from");
 const output_to = document.getElementById("to");
+// currency 假資料
+let currency =[
+    'AED','ARS','AUD','BGN','BRL','BSD','CAD','CHF','CLP','CNY','COP','CZK','DKK','DOP','EGP','EUR','FJD','GBP','GTQ','HKD','HRK','HUF','IDR','ILS','INR','ISK','JPY','KRW','KZT','MXN','MYR','NOK','NZD','PAB','PEN','PHP','PKR','PLN','RYG','RON','RUB','SAR','SEK','SGD','THB','TRY','TWD','UAH','USD','UYU','VND','ZAR'
+]
 
+// 初始option陣列
+let content = "";
+currency.forEach(function(item){
+    content += `<option value=${item}>${item}</option>`;
+})
+// console.log(content);
+from_currency.innerHTML = content;
+to_currency.innerHTML = content;
 
 //點擊中間轉換圓鈕事件
 exchange.addEventListener("click",()=>{
