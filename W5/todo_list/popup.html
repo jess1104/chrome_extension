@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.6.0/css/all.css"
+    integrity="sha512-z2kebVhgyJep2BVZe+e7Fcl3IQNSZalCrcAEb2Rge/m9ONeaxSIhUkVkxOd4XwJ38RKJ56oFf/XxeVOtYGFNLw=="
+    crossorigin="anonymous"
+  />
+</head>
+<body>
+  <style>
+    body {
+      width: 300px;
+      background-color: #aed0f7;
+      box-sizing: border-box;
+    }
+    h1 {
+      color: #fff;
+      text-align: center;
+    }
+    .newFresh div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+    .newFresh input {
+      width: 30px;
+      height: 20px;
+      padding-left: 15px;
+      margin-right: 2px;
+      border-radius: 3px;
+      border: none;
+      outline: medium;
+    }
+  
+
+    #newFreshToggle {
+      margin-left: 10px;
+      padding: 3px;
+      border-radius: 3px;
+      background-color: #508fd8;
+      cursor: pointer;
+    }
+    .todoContent > button {
+      margin-bottom: 5px;
+      width: 100%;
+      height: 25px;
+      border: none;
+      color: #fff;
+      background-color: #508fd8;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .newItem input {
+      margin: 5px 0;
+      width: 82%;
+      height: 20px;
+      border-radius: 3px;
+      border: none;
+      outline: medium;
+    }
+    .newItem button {
+      width: 15%;
+      padding: 4px 0;
+      border: none;
+      color: #fff;
+      background-color: #9751d8;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+
+    .todoItems,
+    .todoItems li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .todoItems li {
+      padding: 10px;
+      color: rgb(80, 80, 80);
+      border-bottom: 1px solid grey;
+      display: flex;
+      justify-content: space-between;
+    }
+    .todoItems li:hover {
+      background: rgba(0, 0, 0, 0.25);
+    }
+    .todoItems li.done .item {
+      text-decoration: line-through;
+    }
+    .todoItems div span {
+      margin: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .newItem {
+      display: none;
+    }
+  </style>
+  <!-- <section class="rightClick">
+    <div>
+      <div id="rightClickToggle" data-open="1">開</div>
+    </div>
+  </section> -->
+  <section class="newFresh">
+    <h1>New Fresh</h1>
+    <div>
+      <input type="number" max="10" id="newFreshSecond" value="2" /><span
+        >秒</span
+      >
+      <div id="newFreshToggle" data-open="0">關</div>
+    </div>
+  </section>
+  <section class="todoContent">
+    <h1>My Todo's</h1>
+    <button class="createTodo">New Todo</button>
+    <div class="newItem">
+      <input type="text" />
+      <button>Save</button>
+    </div>
+    <ul class="todoItems">
+      <li class="done">
+        <span class="item">inject AZ</span>
+        <div>
+          <span><i class="far fa-check-circle"></i></span
+          ><span> <i class="far fa-trash-alt"></i></span>
+        </div>
+      </li>
+      <li>
+        <span class="item">inject AZ</span>
+        <div>
+          <span><i class="far fa-check-circle"></i></span
+          ><span> <i class="far fa-trash-alt"></i></span>
+        </div>
+      </li>
+      <li>
+        <span class="item">inject AZ</span>
+        <div>
+          <span><i class="far fa-check-circle"></i></span
+          ><span> <i class="far fa-trash-alt"></i></span>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <script src="popup.js"></script>
+  <script src="popup2.js"></script>
+</body>
