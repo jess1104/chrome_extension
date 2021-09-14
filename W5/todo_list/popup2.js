@@ -21,7 +21,7 @@ function init() {
     }
   });
 
-  // 一直自動重整
+  // 一直自動重整，重新撈取這個popup裡的值
   setInterval(() => {
     const isOpen = document
       .getElementById("newFreshToggle")
