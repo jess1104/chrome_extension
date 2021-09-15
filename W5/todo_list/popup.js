@@ -42,20 +42,24 @@ document
       document.querySelector(".newItem input").value = "";
     }
   });
-
+// 遍歷資料
 function fetchItems() {
   const itemsList = document.querySelector("ul.todoItems");
   itemsList.innerHTML = "";
   var newItemHTML = "";
   try {
+    // 先將localk的值抓出來
     var items = localStorage.getItem("todoItems");
+    // 將local裡的值轉為相對應的object(這邊是陣列)
     var itemsArr = JSON.parse(items);
+    
     if (itemsArr) {
       for (var i = 0; i < itemsArr.length; i++) {
         var status = "";
         if (itemsArr[i].status == 1) {
+          // 如果狀態是一將status設置
           status = 'class="done"';
-          // console.log(itemsArr[i]);
+          // console.log(itemsArr)
         }
         newItemHTML += `
                     <li data-itemindex="${i}" ${status}> 
@@ -64,33 +68,38 @@ function fetchItems() {
                     </li>
                     `;
       }
+      // 印出
       itemsList.innerHTML = newItemHTML;
 
+      // 抓到li
       var itemsListUL = document.querySelectorAll("ul li");
       // console.log(itemsListUL.length)
       //將所有li遍歷
       for (var i = 0; i < itemsListUL.length; i++) {
+        // 抓到勾勾✅鈕 
         itemsListUL[i]
           .querySelector(".itemComplete")
           .addEventListener("click", function () {
+            // 勾勾鈕的上層再上層才是li
             var index = this.parentNode.parentNode.dataset.itemindex;
-            console.log(index);
+            // 完成
             itemComplete(index);
           });
-
+        // 抓到🗑
         itemsListUL[i]
           .querySelector(".itemDelete")
           .addEventListener("click", function () {
             var index = this.parentNode.parentNode.dataset.itemindex;
-            console.log(index);
+            // 刪除
             itemDelete(index);
           });
       }
     }
-  } catch (e) {}
+  } catch (e) {alert('wrong!')}
 }
 
 fetchItems();
+
 // 完成畫線
 function itemComplete(index) {
   var items = localStorage.getItem("todoItems");
@@ -112,6 +121,7 @@ function itemDelete(index) {
   itemsArr.splice(index, 1);
 
   saveItems(itemsArr);
+  // 抓到那個index去移除
   document.querySelector('li[data-itemindex="' + index + '"]').remove();
 }
 

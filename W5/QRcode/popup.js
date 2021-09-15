@@ -5,8 +5,6 @@ document.querySelector('button').addEventListener('click',function(){
   let url = tabs[0].url;
   if(url){
       document.querySelector(".pic").innerHTML = `<img src="http://chart.apis.google.com/chart?cht=qr&choe=UTF-8&chs=150x150&chl=${url}" />`;
-
-
     }
   });
 });
