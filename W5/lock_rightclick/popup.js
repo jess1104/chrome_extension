@@ -18,10 +18,12 @@ document
     if (isOpen == 1) {
       // ui改關並且改data-open變成0
       this.innerText = "右鍵已鎖";
+      // 將data-open改為0
       this.setAttribute("data-open", 0);
       sendMessage("rightClickOpen", 0);
     } else {
       this.innerText = "右鍵沒鎖";
+      // 將data-open改為1
       this.setAttribute("data-open", 1);
       sendMessage("rightClickOpen", 1);
     }
