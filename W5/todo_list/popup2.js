@@ -10,6 +10,7 @@ function init() {
     let second = newFreshSecond.value;
     sendMessage("refreshSecond", second);
   }
+
   // 設置完幾秒再去refresh
   newFreshSecond.addEventListener("keyup", function () {
     const isOpen = document
@@ -52,7 +53,7 @@ document
     }
   });
 
-// 把訊息傳送至背景或content
+// 把訊息傳送至content
 function sendMessage(action, value) {
   // currentWindow(目前視窗)
   chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
@@ -64,4 +65,3 @@ function sendMessage(action, value) {
     // console.log(activeTab,msgObj)
   });
 }
-

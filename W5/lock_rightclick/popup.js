@@ -1,7 +1,7 @@
 // 把訊息傳送至背景或content
 function sendMessage(action, value) {
   // 使用參數聲明物件key的值
-  var msgObj = { [action]: value };
+  let msgObj = { [action]: value };
   // console.log(msgObj);
   // 跑背景
   chrome.runtime.sendMessage(msgObj);

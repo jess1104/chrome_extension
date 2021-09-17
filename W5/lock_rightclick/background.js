@@ -9,11 +9,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
 function sendMessage(action, value) {
   // 使用參數聲明物件key的值
-  var msgObj = { [action]: value };
-  // currentWindow(目前視窗)
+  let msgObj = { [action]: value };
+  // currentWindow(抓到目前視窗)
   chrome.tabs.query({ currentWindow: true, active: true }, function (tabs) {
     // activeTab當下那個分頁
-    var activeTab = tabs[0];
+    let activeTab = tabs[0];
     chrome.tabs.sendMessage(activeTab.id, msgObj);
   });
 }
