@@ -64,3 +64,12 @@
 ## W12
 
 - Vue,Vue Router,Vuex 報告.1028
+
+## W13
+- todo list
+
+## W14
+- swipper
+
+# W15 
+- form validation
